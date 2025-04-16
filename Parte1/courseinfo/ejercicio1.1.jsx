@@ -1,5 +1,6 @@
-function Componentes1() {
-  return <></>;
-}
+const Array1 = [1, 2, 3, 4];
 
-export default Componentes1;
+console.log(Array1);
+
+Array1.concat(10);
+console.log(Array1);
