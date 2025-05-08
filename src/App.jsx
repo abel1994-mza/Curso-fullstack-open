@@ -53,6 +53,7 @@ const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
   const [selected, setSelected] = useState(3);
+  const [votes, setVotes] = useState(Array(anecdotes.length).fill(0));
 
   const handleGoodClick = () => {
     setGood(good + 1);
@@ -68,6 +69,11 @@ const App = () => {
     const randomIndex = Math.floor(Math.random() * anecdotes.length);
     setSelected(randomIndex);
   };
+  const handleVoteClick = () => {
+    const newVotes = [...votes];
+    newVotes[selected] += 1;
+    setVotes(newVotes);
+  };
 
   return (
     <>
@@ -81,6 +87,10 @@ const App = () => {
       <h1>Anecdote of the day</h1>
       <p>{anecdotes[selected]}</p>
       <Button text="Next anecdote" handleClick={handleAnecdoteClick} />
+      <Button text="Vote" handleClick={handleVoteClick} />
+      <h1>Anecdote with most votes</h1>
+      <p>{anecdotes[votes.indexOf(Math.max(...votes))]}</p>
+      <p>has {Math.max(...votes)} votes</p>
     </>
   );
 };
