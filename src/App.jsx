@@ -4,6 +4,7 @@ const Header = (props) => {
 };
 
 const Content = ({ part, exercises }) => {
+  console.log(part, exercises);
   return (
     <>
       <p>Parte: {part}</p>
