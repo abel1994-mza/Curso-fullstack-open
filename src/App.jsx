@@ -91,7 +91,6 @@ const App = () => {
       <h1>Anecdote with most votes</h1>
       <p>{anecdotes[votes.indexOf(Math.max(...votes))]}</p>
       <p>has {Math.max(...votes)} votes</p>
-      <h1>Votes</h1>
     </>
   );
 };
